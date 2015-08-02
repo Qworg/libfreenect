@@ -142,6 +142,10 @@ namespace Freenect {
 		const freenect_device *getDevice() {
 			return m_dev;
 		}
+		//TERRIBLE HACK - but the only way to get the device pointer necessary to use the depth conversions outside of the scope.
+		freenect_device *getDevicePtr() {
+			return m_dev;
+		}
 		// Do not call directly even in child
 		virtual void VideoCallback(void *video, uint32_t timestamp) { }
 		// Do not call directly even in child
